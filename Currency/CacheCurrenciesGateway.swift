@@ -57,6 +57,32 @@ class CacheCurrenciesGateway: CurrenciesGateway {
             }
         }
     }
+    
+    func getAccounts(completion: @escaping GetAccountsEntityGatewayCompletionHandler) {
+        apiGateway.getAccounts { [weak self] result in
+            switch result {
+            case let .success(accounts):
+                self?.localPersistGateway.save(accounts: accounts) {
+                    completion(result)
+                }
+            case .failure:
+                self?.localPersistGateway.getAccounts(completion: completion)
+            }
+        }
+    }
+    
+    func getTransactions(params: GetTransactionsParams, completion: @escaping GetTransactionsEntityGatewayCompletionHandler) {
+        apiGateway.getTransactions(params: params) { [weak self] result in
+            switch result {
+            case let .success(transactions):
+                self?.localPersistGateway.save(params: params, transactions: transactions) {
+                    completion(result)
+                }
+            case .failure:
+                self?.localPersistGateway.getTransactions(params: params, completion: completion)
+            }
+        }
+    }
 
     // MARK: - Helpers
 

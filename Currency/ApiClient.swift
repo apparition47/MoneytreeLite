@@ -65,11 +65,30 @@ extension ResponseHandler {
 struct APIManager: ResponseHandler {
     static func execute<T: Codable>(request: ApiCallRequest, completion: CallResponse<T>) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
+        #if !APISTUB
         let apiRequest = APIRequest(requestParam: request)
         Alamofire.request(apiRequest).validate().responseData { response in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             self.handleResponse(response, completion: completion)
         }
+        #else
+        DispatchQueue.global(qos: .background).async {
+            guard
+                let url = Bundle.main.url(forResource: request.path, withExtension: "json"),
+                let data = try? Data(contentsOf: url),
+                let res = try? JSONDecoder().decode(T.self, from: data) else {
+                DispatchQueue.main.async {
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    // TODO completion(res, err)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                completion?(res)
+            }
+        }
+        #endif
     }
 }
