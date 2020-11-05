@@ -199,9 +199,9 @@
 		2FC6C4911E60B586005539F5 /* EntityGateway */ = {
 			isa = PBXGroup;
 			children = (
-				7336F40A233276AC00E63E83 /* LocalPersist */,
 				2FC6C49B1E60B603005539F5 /* API */,
 				2FC6C4991E60B5EA005539F5 /* Cache */,
+				7336F40A233276AC00E63E83 /* LocalPersist */,
 			);
 			name = EntityGateway;
 			sourceTree = "<group>";
@@ -209,10 +209,10 @@
 		2FC6C4921E60B593005539F5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6C4A51E60B678005539F5 /* UseCases */,
+				2FC6C4A21E60B65E005539F5 /* Result.swift */,
 				2FC6C4A61E60B685005539F5 /* Entities */,
 				2FC6C4A41E60B671005539F5 /* Gateways */,
-				2FC6C4A21E60B65E005539F5 /* Result.swift */,
+				2FC6C4A51E60B678005539F5 /* UseCases */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -229,9 +229,9 @@
 		2FC6C4941E60B59E005539F5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
-				2F3D6B7F1E61A37400CF7881 /* UIViewController+Alert.swift */,
 				7370A2251F682B400062C4F9 /* Constants.swift */,
+				2F3D6B7F1E61A37400CF7881 /* UIViewController+Alert.swift */,
+				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -416,11 +416,11 @@
 				7336F4042332726500E63E83 /* apierror.json */,
 				7336F400233270C900E63E83 /* list.json */,
 				7336F401233270C900E63E83 /* live.json */,
-				738485962335BDDC00D3CA86 /* UseCases */,
-				7336F3FC23326F9A00E63E83 /* Gateways */,
-				7336F3FE23326FAC00E63E83 /* Presenters */,
-				7336F3FD23326FA500E63E83 /* Helpers */,
 				73880E0C1F8670FA005E24FB /* Info.plist */,
+				7336F3FC23326F9A00E63E83 /* Gateways */,
+				7336F3FD23326FA500E63E83 /* Helpers */,
+				7336F3FE23326FAC00E63E83 /* Presenters */,
+				738485962335BDDC00D3CA86 /* UseCases */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -501,7 +501,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = "Aaron Lee";
 				TargetAttributes = {
 					2FC6C46A1E60B542005539F5 = {
@@ -705,6 +705,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -729,7 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -765,6 +766,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -783,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -802,7 +804,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.currency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 			};
 			name = Debug;
 		};
@@ -815,7 +816,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.currency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 			};
 			name = Release;
 		};
@@ -831,7 +831,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -852,7 +852,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

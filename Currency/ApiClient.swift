@@ -17,7 +17,7 @@ struct APIRequest {
     
     private var parameters: Parameters {
         get {
-            return requestParam.params ?? [:]
+            return requestParam.params
         }
     }
     
@@ -53,7 +53,7 @@ extension ResponseHandler {
                 let decoder = JSONDecoder()
                 let parsedResponse = try decoder.decode(T.self, from: value)
                 completion?(parsedResponse)
-            } catch let error {
+            } catch {
                 
             }
         case .failure:
