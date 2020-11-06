@@ -24,3 +24,9 @@ extension Account: Codable {
         case currentBalanceInBase = "current_balance_in_base"
     }
 }
+
+extension Account: Equatable {
+    static func == (lhs: Account, rhs: Account) -> Bool {
+        lhs.id == rhs.id
+    }
+}

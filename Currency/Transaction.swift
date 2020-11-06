@@ -10,8 +10,8 @@ import Foundation
 
 struct Transaction {
     let accountId: Int
-    let amount: String
-    let categoryId: String
+    let amount: Float
+    let categoryId: Int
     let date: String
     let description: String
     let id: Int
@@ -22,5 +22,11 @@ extension Transaction: Codable {
         case amount, date, id, description
         case accountId = "account_id"
         case categoryId = "category_id"
+    }
+}
+
+extension Transaction: Equatable {
+    static func == (lhs: Transaction, rhs: Transaction) -> Bool {
+        lhs.id == rhs.id
     }
 }

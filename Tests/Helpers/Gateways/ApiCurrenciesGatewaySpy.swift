@@ -10,6 +10,7 @@ import Foundation
 @testable import Currency
 
 class ApiCurrenciesGatewaySpy: ApiCurrenciesGateway {
+
     var liveResultToBeReturned: Result<Quotes>!
     var listResultToBeReturned: Result<Currencies>!
     
@@ -19,5 +20,19 @@ class ApiCurrenciesGatewaySpy: ApiCurrenciesGateway {
     
     func list(completion: @escaping ListCurrenciesEntityGatewayCompletionHandler) {
         completion(listResultToBeReturned)
+    }
+    
+    var getAccountsResultToBeReturned: Result<[Account]>!
+    var getTransactionsResultToBeReturned: Result<[Transaction]>!
+    
+    var getTransactionParams: GetTransactionsParams!
+    
+    func getAccounts(completion: @escaping GetAccountsEntityGatewayCompletionHandler) {
+        completion(getAccountsResultToBeReturned)
+    }
+    
+    func getTransactions(params: GetTransactionsParams, completion: @escaping GetTransactionsEntityGatewayCompletionHandler) {
+        getTransactionParams = params
+        completion(getTransactionsResultToBeReturned)
     }
 }

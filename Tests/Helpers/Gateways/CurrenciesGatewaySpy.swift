@@ -10,6 +10,17 @@ import Foundation
 @testable import Currency
 
 class CurrenciesGatewaySpy: CurrenciesGateway {
+    var getAccountsResultToBeReturned: Result<[Account]>!
+    var getTransactionsResultToBeReturned: Result<[Transaction]>!
+    
+    func getAccounts(completion: @escaping GetAccountsEntityGatewayCompletionHandler) {
+        completion(getAccountsResultToBeReturned)
+    }
+    
+    func getTransactions(params: GetTransactionsParams, completion: @escaping GetTransactionsEntityGatewayCompletionHandler) {
+        completion(getTransactionsResultToBeReturned)
+    }
+    
     var liveCurrenciesResultToBeReturned: Result<Quotes>!
     var listCurrenciesResultToBeReturned: Result<Currencies>!
     

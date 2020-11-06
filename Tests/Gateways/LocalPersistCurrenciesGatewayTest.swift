@@ -11,25 +11,32 @@ import XCTest
 
 class LocalPersistCurrenciesGatewayTest: XCTestCase {
     var gateway: UserDefaultsCurrenciesGateway {
-        return UserDefaultsCurrenciesGateway()
+        UserDefaultsCurrenciesGateway()
     }
     
     func testSaveAndFetch() {
-        let saveCompletionExpectation = expectation(description: "Save Quotes completion expectation")
-        let obj = Currencies()
-        gateway.save(list: obj)
-        gateway.list { result in
-            guard case let .success(quotes) = result else {
-                XCTFail("Failed to load")
-                return
+        let saveCompletionExpectation = expectation(description: "Save Accounts completion expectation")
+        
+        let url = Bundle.main.url(forResource: "accounts", withExtension: "json")!
+        let data = try! Data(contentsOf: url)
+        let jsonData = try! JSONDecoder().decode(GetAccountsResponse.self, from: data)
+        let listToReturn = jsonData.accounts
+        
+        gateway.save(accounts: listToReturn) {
+            self.gateway.getAccounts { result in
+                guard case let .success(accounts) = result else {
+                    XCTFail("Failed to load")
+                    return
+                }
+                
+                if listToReturn != accounts {
+                    XCTFail("Failed to decode")
+                }
+                
+                saveCompletionExpectation.fulfill()
             }
-            
-            if obj != quotes {
-                XCTFail("Failed to decode")
-            }
-            
-            saveCompletionExpectation.fulfill()
         }
+        
         waitForExpectations(timeout: 1, handler: nil)
     }
 }
