@@ -10,6 +10,7 @@ import UIKit
 
 protocol AccountsView: class {
     func getAccountsSuccess()
+    func getAccountsTotalSuccess(total: String)
 }
 
 class AccountsViewController: UITableViewController {
@@ -60,5 +61,9 @@ extension AccountsViewController {
 extension AccountsViewController: AccountsView {
     func getAccountsSuccess() {
         tableView.reloadData()
+    }
+    
+    func getAccountsTotalSuccess(total: String) {
+        title = total
     }
 }

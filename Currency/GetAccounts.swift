@@ -9,9 +9,11 @@
 import Foundation
 
 typealias GetAccountsUseCaseCompletionHandler = (_ currencies: Result<[Account]>) -> Void
+typealias GetAccountsTotalUseCaseCompletionHandler = (_ currencies: Result<Float>) -> Void
 
 protocol GetAccountsUseCase {
     func getAccounts(completion: @escaping GetAccountsUseCaseCompletionHandler)
+    func getAccountsTotal(completion: @escaping GetAccountsTotalUseCaseCompletionHandler)
 }
 
 class GetAccountsUseCaseImplementation: GetAccountsUseCase {
@@ -27,6 +29,21 @@ class GetAccountsUseCaseImplementation: GetAccountsUseCase {
     func getAccounts(completion: @escaping GetAccountsUseCaseCompletionHandler) {
         self.currenciesGateway.getAccounts { result in
             completion(result)
+        }
+    }
+    
+    func getAccountsTotal(completion: @escaping GetAccountsTotalUseCaseCompletionHandler) {
+        self.currenciesGateway.getAccounts { result in
+            switch result {
+            case .success(let accounts):
+                let sum = accounts.reduce(0) { (sum, account) -> Float in
+                    return sum + account.currentBalanceInBase
+                }
+                completion(.success(sum))
+            case .failure:
+                break
+//                completion(.failure(Error())
+            }
         }
     }
 }

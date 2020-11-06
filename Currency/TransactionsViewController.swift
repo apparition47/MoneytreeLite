@@ -10,6 +10,7 @@ import UIKit
 
 protocol TransactionsView: class {
     func getTransactionsSuccess()
+    func displayTitle(title: String)
 }
 
 class TransactionsViewController: UITableViewController {
@@ -53,5 +54,9 @@ extension TransactionsViewController {
 extension TransactionsViewController: TransactionsView {
     func getTransactionsSuccess() {
         tableView.reloadData()
+    }
+    
+    func displayTitle(title: String) {
+        self.title = title
     }
 }

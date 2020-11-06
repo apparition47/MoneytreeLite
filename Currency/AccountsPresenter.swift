@@ -39,6 +39,7 @@ class AccountsPresenterImplementation: AccountsPresenter {
         let header: String
         let items: [Account]
     }
+    private var accountsTotal: Float = 0
     
     init(view: AccountsView,
          getAccountsUseCase: GetAccountsUseCase,
@@ -70,6 +71,14 @@ class AccountsPresenterImplementation: AccountsPresenter {
             case .failure: break
             }
         }
+        
+        getAccountsUseCase.getAccountsTotal { [weak self] res in
+            switch res {
+            case .success(let total):
+                self?.handleTotal(total)
+            case .failure: break
+            }
+        }
     }
     
     func didSelectAccount(section: Int, row: Int) {
@@ -91,5 +100,10 @@ class AccountsPresenterImplementation: AccountsPresenter {
                 self?.view?.getAccountsSuccess()
             }
         }
+    }
+    
+    private func handleTotal(_ accountsTotal: Float) {
+        self.accountsTotal = accountsTotal
+        view?.getAccountsTotalSuccess(total: "\(accountsTotal)")
     }
 }

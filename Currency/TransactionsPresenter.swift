@@ -68,6 +68,8 @@ class TransactionsPresenterImplementation: TransactionsPresenter {
     }
     
     func viewDidLoad() {
+        view?.displayTitle(title: "\(account.currentBalanceInBase)")
+        
         let params = GetTransactionsParams(accountId: account.id)
         getTransactionsUseCase.getTransactions(params: params) { [weak self] res in
             switch res {
