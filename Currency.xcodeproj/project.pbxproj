@@ -16,6 +16,17 @@
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
 		3197DD2FBB25FAFFDAE2B0B7 /* libPods-Currency.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA699B7C93CAEB78E3124608 /* libPods-Currency.a */; };
+		730DDBBA25556EA50067128E /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBB925556EA50067128E /* AccountsViewController.swift */; };
+		730DDBBE25556EB20067128E /* AccountsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBBD25556EB20067128E /* AccountsPresenter.swift */; };
+		730DDBC225556ECA0067128E /* AccountsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBC125556ECA0067128E /* AccountsRouter.swift */; };
+		730DDBC625556EDF0067128E /* AccountsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBC525556EDF0067128E /* AccountsConfigurator.swift */; };
+		730DDBCA25556EEC0067128E /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBC925556EEC0067128E /* AccountCell.swift */; };
+		730DDBCE25556F0D0067128E /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBCD25556F0D0067128E /* TransactionsViewController.swift */; };
+		730DDBD225556F160067128E /* TransactionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBD125556F160067128E /* TransactionsPresenter.swift */; };
+		730DDBD625556F210067128E /* TransactionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBD525556F210067128E /* TransactionsRouter.swift */; };
+		730DDBDA25556F2D0067128E /* TransactionsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBD925556F2D0067128E /* TransactionsConfigurator.swift */; };
+		730DDBDE25556F370067128E /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBDD25556F370067128E /* TransactionCell.swift */; };
+		730DDBE2255570FA0067128E /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBE1255570FA0067128E /* GetAccounts.swift */; };
 		7310E7CD2335CC9400F275DF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7310E7CC2335CC9400F275DF /* Helpers.swift */; };
 		7310E7CF2335D0CD00F275DF /* CurrencyListViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7310E7CE2335D0CD00F275DF /* CurrencyListViewSpy.swift */; };
 		7310E7D22335D1AB00F275DF /* CurrencyListViewRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7310E7D12335D1AB00F275DF /* CurrencyListViewRouterSpy.swift */; };
@@ -93,6 +104,17 @@
 		2FC6C4A21E60B65E005539F5 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3DA892778BA41E00AECECAB0 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		59BD818E474FFC16554DD063 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730DDBB925556EA50067128E /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		730DDBBD25556EB20067128E /* AccountsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenter.swift; sourceTree = "<group>"; };
+		730DDBC125556ECA0067128E /* AccountsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRouter.swift; sourceTree = "<group>"; };
+		730DDBC525556EDF0067128E /* AccountsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsConfigurator.swift; sourceTree = "<group>"; };
+		730DDBC925556EEC0067128E /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		730DDBCD25556F0D0067128E /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		730DDBD125556F160067128E /* TransactionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenter.swift; sourceTree = "<group>"; };
+		730DDBD525556F210067128E /* TransactionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouter.swift; sourceTree = "<group>"; };
+		730DDBD925556F2D0067128E /* TransactionsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsConfigurator.swift; sourceTree = "<group>"; };
+		730DDBDD25556F370067128E /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		730DDBE1255570FA0067128E /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		7310E7CC2335CC9400F275DF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		7310E7CE2335D0CD00F275DF /* CurrencyListViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewSpy.swift; sourceTree = "<group>"; };
 		7310E7D12335D1AB00F275DF /* CurrencyListViewRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewRouterSpy.swift; sourceTree = "<group>"; };
@@ -240,8 +262,10 @@
 		2FC6C4931E60B597005539F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				730DDBB725556E6E0067128E /* Accounts */,
 				739D8A1F1FAD87B1000B279B /* Currencies Featured */,
 				734DB4B51F51BFD800905F64 /* Currencies List */,
+				730DDBB825556E7A0067128E /* Transactions */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -288,8 +312,9 @@
 			isa = PBXGroup;
 			children = (
 				737FF4101F585CF3007329B2 /* ConvertCurrenciesUseCase.swift */,
-				7336F4062332746600E63E83 /* ListCurrenciesUseCase.swift */,
+				730DDBE1255570FA0067128E /* GetAccounts.swift */,
 				73D3807425543FC0000F18BE /* GetTransactions.swift */,
+				7336F4062332746600E63E83 /* ListCurrenciesUseCase.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -333,6 +358,30 @@
 				73D3805C25543353000F18BE /* GetTransactionsApiRequest.swift */,
 			);
 			name = Requests;
+			sourceTree = "<group>";
+		};
+		730DDBB725556E6E0067128E /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				730DDBB925556EA50067128E /* AccountsViewController.swift */,
+				730DDBBD25556EB20067128E /* AccountsPresenter.swift */,
+				730DDBC125556ECA0067128E /* AccountsRouter.swift */,
+				730DDBC525556EDF0067128E /* AccountsConfigurator.swift */,
+				730DDBC925556EEC0067128E /* AccountCell.swift */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
+		730DDBB825556E7A0067128E /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				730DDBCD25556F0D0067128E /* TransactionsViewController.swift */,
+				730DDBD125556F160067128E /* TransactionsPresenter.swift */,
+				730DDBD525556F210067128E /* TransactionsRouter.swift */,
+				730DDBD925556F2D0067128E /* TransactionsConfigurator.swift */,
+				730DDBDD25556F370067128E /* TransactionCell.swift */,
+			);
+			name = Transactions;
 			sourceTree = "<group>";
 		};
 		7310E7D02335D19700F275DF /* Routers */ = {
@@ -641,17 +690,23 @@
 				739D8A211FAD87E3000B279B /* CurrenciesFeaturedViewController.swift in Sources */,
 				737FF4111F585CF3007329B2 /* ConvertCurrenciesUseCase.swift in Sources */,
 				7333A3EA1F5ACFEB00996C84 /* LiveCurrenciesApiRequest.swift in Sources */,
+				730DDBCA25556EEC0067128E /* AccountCell.swift in Sources */,
 				739D8A231FAD8998000B279B /* CurrenciesFeaturedViewRouter.swift in Sources */,
 				73316B422333C53900394C5F /* CurrencyRate.swift in Sources */,
 				7336F4072332746600E63E83 /* ListCurrenciesUseCase.swift in Sources */,
 				733239761F53094800E9AC7B /* CurrencyListConfigurator.swift in Sources */,
 				73316B2B2333A53700394C5F /* LocalPersistCurrenciesGateway.swift in Sources */,
+				730DDBC625556EDF0067128E /* AccountsConfigurator.swift in Sources */,
 				73316B2D2333AB7500394C5F /* ListCurrenciesApiRequest.swift in Sources */,
+				730DDBE2255570FA0067128E /* GetAccounts.swift in Sources */,
 				2FC6C46F1E60B542005539F5 /* AppDelegate.swift in Sources */,
+				730DDBBE25556EB20067128E /* AccountsPresenter.swift in Sources */,
 				734AF5E81FAF287E00C7099B /* CurrencyCell.swift in Sources */,
+				730DDBCE25556F0D0067128E /* TransactionsViewController.swift in Sources */,
 				7370A2261F682B400062C4F9 /* Constants.swift in Sources */,
 				2F3D6B861E61D0AC00CF7881 /* ApiClient.swift in Sources */,
 				733239791F53094800E9AC7B /* CurrencyListViewRouter.swift in Sources */,
+				730DDBC225556ECA0067128E /* AccountsRouter.swift in Sources */,
 				739827F31F56FF2B00730BE6 /* ApiCurrenciesGateway.swift in Sources */,
 				738287D2233260E100ED3067 /* ListResponse.swift in Sources */,
 				738287BB2332551E00ED3067 /* LiveResponse.swift in Sources */,
@@ -662,14 +717,19 @@
 				2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */,
 				73316B3E2333C2AA00394C5F /* CurrencyRateCell.swift in Sources */,
 				73D3805D25543353000F18BE /* GetTransactionsApiRequest.swift in Sources */,
+				730DDBD625556F210067128E /* TransactionsRouter.swift in Sources */,
 				739D8A251FAD8A3B000B279B /* CurrenciesFeaturedPresenter.swift in Sources */,
 				73D3806F25543BE2000F18BE /* Transaction.swift in Sources */,
 				2F3D6B801E61A37400CF7881 /* UIViewController+Alert.swift in Sources */,
 				739827EF1F56EC7A00730BE6 /* CurrenciesGateway.swift in Sources */,
+				730DDBDE25556F370067128E /* TransactionCell.swift in Sources */,
 				2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */,
 				73D3807525543FC0000F18BE /* GetTransactions.swift in Sources */,
 				733239781F53094800E9AC7B /* CurrencyListTableViewController.swift in Sources */,
+				730DDBD225556F160067128E /* TransactionsPresenter.swift in Sources */,
+				730DDBBA25556EA50067128E /* AccountsViewController.swift in Sources */,
 				738287CE2332591100ED3067 /* ApiLayerError.swift in Sources */,
+				730DDBDA25556F2D0067128E /* TransactionsConfigurator.swift in Sources */,
 				734BA0FF1F5C03A00006B3D4 /* CacheCurrenciesGateway.swift in Sources */,
 				73D3806325543B4C000F18BE /* GetAccountsResponse.swift in Sources */,
 				733239771F53094800E9AC7B /* CurrencyListPresenter.swift in Sources */,

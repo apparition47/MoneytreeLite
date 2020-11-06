@@ -73,10 +73,13 @@ struct APIManager: ResponseHandler {
         }
         #else
         DispatchQueue.global(qos: .background).async {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            decoder.dateDecodingStrategy = .iso8601
             guard
                 let url = Bundle.main.url(forResource: request.path, withExtension: "json"),
                 let data = try? Data(contentsOf: url),
-                let res = try? JSONDecoder().decode(T.self, from: data) else {
+                let res = try? decoder.decode(T.self, from: data) else {
                 DispatchQueue.main.async {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     // TODO completion(res, err)

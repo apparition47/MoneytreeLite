@@ -12,17 +12,13 @@ struct Transaction {
     let accountId: Int
     let amount: Float
     let categoryId: Int
-    let date: String
+    let date: Date
     let description: String
     let id: Int
 }
 
 extension Transaction: Codable {
-    enum CodingKeys: String, CodingKey {
-        case amount, date, id, description
-        case accountId = "account_id"
-        case categoryId = "category_id"
-    }
+
 }
 
 extension Transaction: Equatable {

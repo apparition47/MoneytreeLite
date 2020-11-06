@@ -18,11 +18,7 @@ struct Account {
 }
 
 extension Account: Codable {
-    enum CodingKeys: String, CodingKey {
-        case id, name, institution, currency
-        case currentBalance = "current_balance"
-        case currentBalanceInBase = "current_balance_in_base"
-    }
+
 }
 
 extension Account: Equatable {
