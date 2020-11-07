@@ -8,7 +8,7 @@
 
 struct LocalError: Error {
     var localizedDescription: String {
-        return message
+        message
     }
     
     var message = ""

@@ -31,33 +31,6 @@ class CacheCurrenciesGateway: CurrenciesGateway {
     
     // MARK: - CurrenciesGateway
     
-    func live(completion: @escaping LiveCurrenciesEntityGatewayCompletionHandler) {
-        if shouldRefresh {
-            liveLookup(completion)
-        } else {
-            localPersistGateway.live { [weak self] result in
-                switch result {
-                case .success:
-                    completion(result)
-                case .failure:
-                    self?.liveLookup(completion)
-                }
-            }
-        }
-    }
-    
-    func list(completion: @escaping ListCurrenciesEntityGatewayCompletionHandler) {
-        apiGateway.list { [weak self] result in
-            switch result {
-            case let .success(currencies):
-                self?.localPersistGateway.save(list: currencies)
-                completion(result)
-            case .failure:
-                self?.localPersistGateway.list(completion: completion)
-            }
-        }
-    }
-    
     func getAccounts(completion: @escaping GetAccountsEntityGatewayCompletionHandler) {
         apiGateway.getAccounts { [weak self] result in
             switch result {
@@ -80,20 +53,6 @@ class CacheCurrenciesGateway: CurrenciesGateway {
                 }
             case .failure:
                 self?.localPersistGateway.getTransactions(params: params, completion: completion)
-            }
-        }
-    }
-
-    // MARK: - Helpers
-
-    private func liveLookup(_ completion: @escaping LiveCurrenciesEntityGatewayCompletionHandler) {
-        apiGateway.live { [weak self] result in
-            switch result {
-            case let .success(quotes):
-                self?.localPersistGateway.save(live: quotes)
-                completion(result)
-            case .failure(_):
-                self?.localPersistGateway.live(completion: completion)
             }
         }
     }

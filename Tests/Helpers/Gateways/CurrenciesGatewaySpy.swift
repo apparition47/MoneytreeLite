@@ -20,15 +20,4 @@ class CurrenciesGatewaySpy: CurrenciesGateway {
     func getTransactions(params: GetTransactionsParams, completion: @escaping GetTransactionsEntityGatewayCompletionHandler) {
         completion(getTransactionsResultToBeReturned)
     }
-    
-    var liveCurrenciesResultToBeReturned: Result<Quotes>!
-    var listCurrenciesResultToBeReturned: Result<Currencies>!
-    
-    func live(completion: @escaping LiveCurrenciesEntityGatewayCompletionHandler) {
-        completion(liveCurrenciesResultToBeReturned)
-    }
-    
-    func list(completion: @escaping ListCurrenciesEntityGatewayCompletionHandler) {
-        completion(listCurrenciesResultToBeReturned)
-    }
 }

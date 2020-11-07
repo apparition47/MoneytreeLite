@@ -10,37 +10,6 @@ import Foundation
 @testable import Currency
 
 class LocalPersistCurrenciesGatewaySpy: LocalPersistenceCurrenciesGateway {
-
-    var savedList: Currencies!
-    var savedLive: Quotes!
-    
-    var getLiveDidCalled = false
-    var getListDidCalled = false
-    var liveResultToBeReturned: Result<Quotes>!
-    var listResultToBeReturned: Result<Currencies>!
-    
-    // MARK: - LocalPersistenceCurrenciesGateway
-    
-    func save(list: Currencies) {
-        savedList = list
-    }
-    
-    func save(live: Quotes) {
-        savedLive = live
-    }
-    
-    // MARK: - CurrenciesGateway
-    
-    func live(completion: @escaping LiveCurrenciesEntityGatewayCompletionHandler) {
-        getLiveDidCalled = true
-        completion(liveResultToBeReturned)
-    }
-    
-    func list(completion: @escaping ListCurrenciesEntityGatewayCompletionHandler) {
-        getListDidCalled = true
-        completion(listResultToBeReturned)
-    }
-    
     var savedAccounts: [Account]!
     var savedTransactions: [Transaction]!
     
@@ -49,6 +18,8 @@ class LocalPersistCurrenciesGatewaySpy: LocalPersistenceCurrenciesGateway {
     var getTransactionParams: GetTransactionsParams!
     var getAccountsResultToBeReturned: Result<[Account]>!
     var getTransactionsResultToBeReturned: Result<[Transaction]>!
+    
+    // MARK: - LocalPersistenceCurrenciesGateway
     
     func save(accounts: [Account], completion: @escaping () -> Void) {
         savedAccounts = accounts
@@ -59,6 +30,8 @@ class LocalPersistCurrenciesGatewaySpy: LocalPersistenceCurrenciesGateway {
         savedTransactions = transactions
         completion()
     }
+    
+    // MARK: - CurrenciesGateway
     
     func getAccounts(completion: @escaping GetAccountsEntityGatewayCompletionHandler) {
         getAccountsDidCalled = true
