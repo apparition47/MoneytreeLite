@@ -13,12 +13,10 @@ protocol AccountCellView {
     func display(account: Account)
 }
 
-class AccountCell: UITableViewCell, Reusable {
+class AccountCell: UITableViewCell, AccountCellView, Reusable {
     @IBOutlet weak var nicknameLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
-}
-
-extension AccountCell: AccountCellView {
+    
     func display(account: Account) {
         nicknameLabel.text = account.name
         balanceLabel.text = "\(account.currentBalance) \(account.currency)"

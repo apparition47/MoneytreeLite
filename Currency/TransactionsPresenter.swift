@@ -29,7 +29,7 @@ class TransactionsPresenterImplementation: TransactionsPresenter {
             dateFormatter.setLocalizedDateFormatFromTemplate("yyyyMMM")
             
             tableDataSource.removeAll()
-            let grouped = Dictionary(grouping: transactions, by: {dateFormatter.string(from: $0.date)}).sorted(by: {$0.key < $1.key})
+            let grouped = Dictionary(grouping: transactions, by: {dateFormatter.string(from: $0.date)}).sorted(by: {$0.key > $1.key})
             for (key, value) in grouped {
                 let sortedTrans = value.sorted(by: {$0.date > $1.date})
                 self.tableDataSource.append(TableSection(header: key, items: sortedTrans))
@@ -68,7 +68,7 @@ class TransactionsPresenterImplementation: TransactionsPresenter {
     }
     
     func viewDidLoad() {
-        view?.displayTitle(title: "\(account.currentBalanceInBase)")
+        view?.displayTitle(title: "\(account.currentBalanceInBase) \(Constants.baseCurrency)")
         
         let params = GetTransactionsParams(accountId: account.id)
         getTransactionsUseCase.getTransactions(params: params) { [weak self] res in

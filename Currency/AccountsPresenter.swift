@@ -104,6 +104,6 @@ class AccountsPresenterImplementation: AccountsPresenter {
     
     private func handleTotal(_ accountsTotal: Float) {
         self.accountsTotal = accountsTotal
-        view?.getAccountsTotalSuccess(total: "\(accountsTotal)")
+        view?.getAccountsTotalSuccess(total: "\(accountsTotal) \(Constants.baseCurrency)")
     }
 }

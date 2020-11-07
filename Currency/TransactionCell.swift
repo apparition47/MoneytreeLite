@@ -21,7 +21,7 @@ class TransactionCell: UITableViewCell, Reusable {
 
 extension TransactionCell: TransactionCellView {
     func display(transaction: Transaction) {
-        amountLabel.text = "\(transaction.amount)"
+        amountLabel.text = "\(transaction.amount) \(Constants.baseCurrency)"
         descriptionLabel.text = transaction.description
         
         let dateFormatter = DateFormatter()
