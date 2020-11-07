@@ -24,7 +24,10 @@ class CacheCurrenciesGatewayTest: XCTestCase {
     func testGetAccountsCacheGetSuccess() {
         let url = Bundle.main.url(forResource: "accounts", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let jsonData = try! JSONDecoder().decode(GetAccountsResponse.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonData = try! decoder.decode(GetAccountsResponse.self, from: data)
         let listToReturn = jsonData.accounts
         
         let expectedResultToReturn: Result<[Account]> = .success(listToReturn)
@@ -48,7 +51,10 @@ class CacheCurrenciesGatewayTest: XCTestCase {
         
         let url = Bundle.main.url(forResource: "transactions_\(accountToLookupTransactions.accountId)", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let jsonData = try! JSONDecoder().decode(GetTransactionsResponse.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonData = try! decoder.decode(GetTransactionsResponse.self, from: data)
         let listToReturn = jsonData.transactions
         
         let expectedResultToReturn: Result<[Transaction]> = .success(listToReturn)

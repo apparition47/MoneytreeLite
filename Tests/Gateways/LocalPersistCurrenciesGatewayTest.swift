@@ -19,7 +19,10 @@ class LocalPersistCurrenciesGatewayTest: XCTestCase {
         
         let url = Bundle.main.url(forResource: "accounts", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let jsonData = try! JSONDecoder().decode(GetAccountsResponse.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonData = try! decoder.decode(GetAccountsResponse.self, from: data)
         let listToReturn = jsonData.accounts
         
         gateway.save(accounts: listToReturn) {

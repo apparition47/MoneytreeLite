@@ -11,5 +11,5 @@ import Foundation
 
 extension Result: Equatable { }
 public func ==<T>(lhs: Result<T>, rhs: Result<T>) -> Bool {
-    return String(describing: lhs) == String(describing: rhs)
+    String(describing: lhs) == String(describing: rhs)
 }

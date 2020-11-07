@@ -16,6 +16,13 @@
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
 		3197DD2FBB25FAFFDAE2B0B7 /* libPods-Currency.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA699B7C93CAEB78E3124608 /* libPods-Currency.a */; };
+		730D4B1925566BEA00D6F67E /* AccountsPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */; };
+		730D4B1D25566D5400D6F67E /* AccountsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */; };
+		730D4B2125566DAC00D6F67E /* GetAccountsUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */; };
+		730D4B2525566E2A00D6F67E /* AccountsViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B2425566E2A00D6F67E /* AccountsViewSpy.swift */; };
+		730D4B2925566E3500D6F67E /* AccountCellSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B2825566E3500D6F67E /* AccountCellSpy.swift */; };
+		730D4B2D25566F5000D6F67E /* AccountsRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B2C25566F5000D6F67E /* AccountsRouterSpy.swift */; };
+		730D4B3125567AB900D6F67E /* GetAccountsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B3025567AB900D6F67E /* GetAccountsUseCaseTest.swift */; };
 		730DDBBA25556EA50067128E /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBB925556EA50067128E /* AccountsViewController.swift */; };
 		730DDBBE25556EB20067128E /* AccountsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBBD25556EB20067128E /* AccountsPresenter.swift */; };
 		730DDBC225556ECA0067128E /* AccountsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730DDBC125556ECA0067128E /* AccountsRouter.swift */; };
@@ -104,6 +111,13 @@
 		2FC6C4A21E60B65E005539F5 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3DA892778BA41E00AECECAB0 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		59BD818E474FFC16554DD063 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenterStub.swift; sourceTree = "<group>"; };
+		730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenterTest.swift; sourceTree = "<group>"; };
+		730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountsUseCaseSpy.swift; sourceTree = "<group>"; };
+		730D4B2425566E2A00D6F67E /* AccountsViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewSpy.swift; sourceTree = "<group>"; };
+		730D4B2825566E3500D6F67E /* AccountCellSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCellSpy.swift; sourceTree = "<group>"; };
+		730D4B2C25566F5000D6F67E /* AccountsRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRouterSpy.swift; sourceTree = "<group>"; };
+		730D4B3025567AB900D6F67E /* GetAccountsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountsUseCaseTest.swift; sourceTree = "<group>"; };
 		730DDBB925556EA50067128E /* AccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
 		730DDBBD25556EB20067128E /* AccountsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenter.swift; sourceTree = "<group>"; };
 		730DDBC125556ECA0067128E /* AccountsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRouter.swift; sourceTree = "<group>"; };
@@ -388,6 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				7310E7D12335D1AB00F275DF /* CurrencyListViewRouterSpy.swift */,
+				730D4B2C25566F5000D6F67E /* AccountsRouterSpy.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -418,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				7336F40B233276FC00E63E83 /* CurrencyListPresenterTest.swift */,
+				730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -427,6 +443,7 @@
 			children = (
 				7336F40D2332771C00E63E83 /* ConvertCurrenciesUseCaseSpy.swift */,
 				7310E7D32335D34000F275DF /* ListCurrenciesUseCaseSpy.swift */,
+				730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -443,6 +460,7 @@
 			isa = PBXGroup;
 			children = (
 				7346E8522335132E00AEC31C /* CurrencyListPresenterStub.swift */,
+				730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -462,6 +480,8 @@
 			children = (
 				7346E85A233516CD00AEC31C /* CurrencyCellSpy.swift */,
 				7310E7CE2335D0CD00F275DF /* CurrencyListViewSpy.swift */,
+				730D4B2425566E2A00D6F67E /* AccountsViewSpy.swift */,
+				730D4B2825566E3500D6F67E /* AccountCellSpy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -482,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				738485972335BE0B00D3CA86 /* ConvertCurrenciesUseCaseTest.swift */,
+				730D4B3025567AB900D6F67E /* GetAccountsUseCaseTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -746,15 +767,22 @@
 				7346E8532335132E00AEC31C /* CurrencyListPresenterStub.swift in Sources */,
 				7346E8562335168900AEC31C /* LocalPersistCurrenciesGatewaySpy.swift in Sources */,
 				7310E7CF2335D0CD00F275DF /* CurrencyListViewSpy.swift in Sources */,
+				730D4B3125567AB900D6F67E /* GetAccountsUseCaseTest.swift in Sources */,
+				730D4B2525566E2A00D6F67E /* AccountsViewSpy.swift in Sources */,
 				738485982335BE0B00D3CA86 /* ConvertCurrenciesUseCaseTest.swift in Sources */,
+				730D4B2925566E3500D6F67E /* AccountCellSpy.swift in Sources */,
 				7310E7D22335D1AB00F275DF /* CurrencyListViewRouterSpy.swift in Sources */,
 				7346E85F2335194B00AEC31C /* LocalPersistCurrenciesGatewayTest.swift in Sources */,
 				7336F40C233276FC00E63E83 /* CurrencyListPresenterTest.swift in Sources */,
 				7346E858233516A000AEC31C /* ApiCurrenciesGatewaySpy.swift in Sources */,
 				7310E7CD2335CC9400F275DF /* Helpers.swift in Sources */,
+				730D4B1925566BEA00D6F67E /* AccountsPresenterStub.swift in Sources */,
 				7310E7D42335D34000F275DF /* ListCurrenciesUseCaseSpy.swift in Sources */,
 				738485952335BB6E00D3CA86 /* CurrenciesGatewaySpy.swift in Sources */,
+				730D4B2125566DAC00D6F67E /* GetAccountsUseCaseSpy.swift in Sources */,
+				730D4B1D25566D5400D6F67E /* AccountsPresenterTest.swift in Sources */,
 				7346E85B233516CD00AEC31C /* CurrencyCellSpy.swift in Sources */,
+				730D4B2D25566F5000D6F67E /* AccountsRouterSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
