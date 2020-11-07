@@ -17,12 +17,7 @@ class LocalPersistCurrenciesGatewayTest: XCTestCase {
     func testSaveAndFetch() {
         let saveCompletionExpectation = expectation(description: "Save Accounts completion expectation")
         
-        let url = Bundle.main.url(forResource: "accounts", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let jsonData = try! decoder.decode(GetAccountsResponse.self, from: data)
+        let jsonData = parse(jsonFile: "accounts", as: GetAccountsResponse.self)
         let listToReturn = jsonData.accounts
         
         gateway.save(accounts: listToReturn) {

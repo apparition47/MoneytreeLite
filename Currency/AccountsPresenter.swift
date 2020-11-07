@@ -34,11 +34,7 @@ class AccountsPresenterImplementation: AccountsPresenter {
         }
     }
     // ordered by the account's nickname and grouped by its institution
-    private var tableDataSource = [TableSection]()
-    private struct TableSection {
-        let header: String
-        let items: [Account]
-    }
+    private var tableDataSource = [TableSection<Account>]()
     private var accountsTotal: Float = 0
     
     init(view: AccountsView,

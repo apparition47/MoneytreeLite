@@ -9,7 +9,6 @@
 import Foundation
 
 public enum Constants {
-    static let accessKey = "783ed59ecd4d47b95677804b0a73d067" // free account
     static let cacheLifetimeDuration: Double = 60 * 30//min
     static let baseCurrency = "JPY" // TODO: retrieve from user API
 }

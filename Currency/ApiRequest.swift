@@ -16,12 +16,10 @@ protocol ApiCallRequest {
 
 extension ApiCallRequest {
     var baseURL: String {
-        return "http://apilayer.net/api"
+        "http://apilayer.net/api"
     }
     
     var params: [String: Any] {
-        var headers = [String: Any]()
-        headers["access_key"] = Constants.accessKey
-        return headers
+        [String: Any]()
     }
 }

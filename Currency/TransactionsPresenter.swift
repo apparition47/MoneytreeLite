@@ -37,11 +37,7 @@ class TransactionsPresenterImplementation: TransactionsPresenter {
         }
     }
     // ordered by month, from the newest one to the oldest
-    private var tableDataSource = [TableSection]()
-    private struct TableSection {
-        let header: String
-        let items: [Transaction]
-    }
+    private var tableDataSource = [TableSection<Transaction>]()
     
     init(view: TransactionsView,
          account: Account,

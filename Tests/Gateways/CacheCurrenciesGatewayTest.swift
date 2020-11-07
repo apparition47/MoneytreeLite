@@ -22,12 +22,7 @@ class CacheCurrenciesGatewayTest: XCTestCase {
     // MARK: - Tests
     
     func testGetAccountsCacheGetSuccess() {
-        let url = Bundle.main.url(forResource: "accounts", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let jsonData = try! decoder.decode(GetAccountsResponse.self, from: data)
+        let jsonData = parse(jsonFile: "accounts", as: GetAccountsResponse.self)
         let listToReturn = jsonData.accounts
         
         let expectedResultToReturn: Result<[Account]> = .success(listToReturn)
@@ -48,13 +43,7 @@ class CacheCurrenciesGatewayTest: XCTestCase {
     func testGetTransactionsCacheGetSuccess() {
         // given
         let accountToLookupTransactions = GetTransactionsParams(accountId: 1)
-        
-        let url = Bundle.main.url(forResource: "transactions_\(accountToLookupTransactions.accountId)", withExtension: "json")!
-        let data = try! Data(contentsOf: url)
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .iso8601
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let jsonData = try! decoder.decode(GetTransactionsResponse.self, from: data)
+        let jsonData = parse(jsonFile: "transactions_\(accountToLookupTransactions.accountId)", as: GetTransactionsResponse.self)
         let listToReturn = jsonData.transactions
         
         let expectedResultToReturn: Result<[Transaction]> = .success(listToReturn)
