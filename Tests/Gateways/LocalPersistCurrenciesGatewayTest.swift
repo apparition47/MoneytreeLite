@@ -15,13 +15,16 @@ class LocalPersistCurrenciesGatewayTest: XCTestCase {
     }
     
     func testSaveAndFetch() {
+        // given
         let saveCompletionExpectation = expectation(description: "Save Accounts completion expectation")
         
         let jsonData = parse(jsonFile: "accounts", as: GetAccountsResponse.self)
         let listToReturn = jsonData.accounts
         
+        // when
         gateway.save(accounts: listToReturn) {
             self.gateway.getAccounts { result in
+                // expected
                 guard case let .success(accounts) = result else {
                     XCTFail("Failed to load")
                     return

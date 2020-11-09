@@ -22,16 +22,19 @@ class CacheCurrenciesGatewayTest: XCTestCase {
     // MARK: - Tests
     
     func testGetAccountsCacheGetSuccess() {
+        // given
         let jsonData = parse(jsonFile: "accounts", as: GetAccountsResponse.self)
         let listToReturn = jsonData.accounts
         
         let expectedResultToReturn: Result<[Account]> = .success(listToReturn)
         
+        // when
         apiGatewaySpy.getAccountsResultToBeReturned = expectedResultToReturn
         let completionExpectation = expectation(description: "Get Accounts completion expectation")
         localGatewaySpy.getAccountsResultToBeReturned = expectedResultToReturn
         
         cacheGateway.getAccounts { res in
+            // expected
             XCTAssertEqual(expectedResultToReturn, res, "The expected result wasn't returned")
             XCTAssertEqual(listToReturn, self.localGatewaySpy.savedAccounts, "accounts weren't persisted")
             completionExpectation.fulfill()
@@ -54,6 +57,7 @@ class CacheCurrenciesGatewayTest: XCTestCase {
         localGatewaySpy.getTransactionsResultToBeReturned = expectedResultToReturn
         
         cacheGateway.getTransactions(params: accountToLookupTransactions) { res in
+            // expected
             XCTAssertEqual(expectedResultToReturn, res, "The expected result wasn't returned")
             XCTAssertEqual(listToReturn, self.localGatewaySpy.savedTransactions, "transactions weren't persisted")
             completionExpectation.fulfill()
@@ -63,13 +67,16 @@ class CacheCurrenciesGatewayTest: XCTestCase {
     }
     
     func testGetAccountsCacheGetFailure() {
+        // given
         let expectedResultToReturn: Result<[Account]> = .failure(LocalError(message: "Error occurred"))
         
         apiGatewaySpy.getAccountsResultToBeReturned = expectedResultToReturn
         localGatewaySpy.getAccountsResultToBeReturned = expectedResultToReturn
         let completionExpectation = expectation(description: "Get Accounts completion expectation")
         
+        // when
         cacheGateway.getAccounts { res in
+            // expected
             XCTAssertEqual(expectedResultToReturn, res, "The expected result wasn't returned")
             XCTAssertTrue(self.localGatewaySpy.getAccountsDidCalled, "get accounts wasn't called")
             

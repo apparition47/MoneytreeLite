@@ -26,11 +26,18 @@ class AccountsPresenterTest: XCTestCase {
     // MARK: - Tests
 
     func testGetAccountsCalled() {
+        // given
         let accountsToBeReturned = [Account]()
         let accountsTotalToBeReturned: Float = 10
         getAccountsUseCaseSpy.resultToBeReturned = .success(accountsToBeReturned)
         getAccountsUseCaseSpy.totalsResultToBeReturned = .success(accountsTotalToBeReturned)
+        
+        // when
         presenter.viewDidLoad()
-//        XCTAssertTrue(viewSpy.getAccountsCalled, "getAccounts was not called")
+        
+        stall(for: 0.1)
+
+        // expected
+        XCTAssertTrue(self.viewSpy.getAccountsCalled, "getAccounts was not called")
     }
 }

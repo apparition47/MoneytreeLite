@@ -16,6 +16,13 @@
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
 		3197DD2FBB25FAFFDAE2B0B7 /* libPods-Currency.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA699B7C93CAEB78E3124608 /* libPods-Currency.a */; };
+		730CE22A2559406600EDBF73 /* GetTransactionsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE2292559406600EDBF73 /* GetTransactionsUseCaseTest.swift */; };
+		730CE22E255940FA00EDBF73 /* GetTransactionsUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE22D255940FA00EDBF73 /* GetTransactionsUseCaseSpy.swift */; };
+		730CE2322559495900EDBF73 /* XCTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE2312559495900EDBF73 /* XCTestHelpers.swift */; };
+		730CE23625594A0200EDBF73 /* TransactionsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE23525594A0200EDBF73 /* TransactionsPresenterTest.swift */; };
+		730CE23A25594A1B00EDBF73 /* TransactionsPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE23925594A1B00EDBF73 /* TransactionsPresenterStub.swift */; };
+		730CE23E25594A6000EDBF73 /* TransactionsRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE23D25594A6000EDBF73 /* TransactionsRouterSpy.swift */; };
+		730CE24225594B3900EDBF73 /* TransactionsViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730CE24125594B3900EDBF73 /* TransactionsViewSpy.swift */; };
 		730D4B1925566BEA00D6F67E /* AccountsPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */; };
 		730D4B1D25566D5400D6F67E /* AccountsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */; };
 		730D4B2125566DAC00D6F67E /* GetAccountsUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */; };
@@ -86,6 +93,13 @@
 		2FC6C4A21E60B65E005539F5 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3DA892778BA41E00AECECAB0 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		59BD818E474FFC16554DD063 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		730CE2292559406600EDBF73 /* GetTransactionsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsUseCaseTest.swift; sourceTree = "<group>"; };
+		730CE22D255940FA00EDBF73 /* GetTransactionsUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransactionsUseCaseSpy.swift; sourceTree = "<group>"; };
+		730CE2312559495900EDBF73 /* XCTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestHelpers.swift; sourceTree = "<group>"; };
+		730CE23525594A0200EDBF73 /* TransactionsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenterTest.swift; sourceTree = "<group>"; };
+		730CE23925594A1B00EDBF73 /* TransactionsPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsPresenterStub.swift; sourceTree = "<group>"; };
+		730CE23D25594A6000EDBF73 /* TransactionsRouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsRouterSpy.swift; sourceTree = "<group>"; };
+		730CE24125594B3900EDBF73 /* TransactionsViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewSpy.swift; sourceTree = "<group>"; };
 		730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenterStub.swift; sourceTree = "<group>"; };
 		730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPresenterTest.swift; sourceTree = "<group>"; };
 		730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccountsUseCaseSpy.swift; sourceTree = "<group>"; };
@@ -343,6 +357,7 @@
 			isa = PBXGroup;
 			children = (
 				730D4B2C25566F5000D6F67E /* AccountsRouterSpy.swift */,
+				730CE23D25594A6000EDBF73 /* TransactionsRouterSpy.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -365,6 +380,7 @@
 				7346E8542335166B00AEC31C /* Gateways */,
 				7346E8512335130900AEC31C /* Presenters */,
 				7310E7CC2335CC9400F275DF /* Helpers.swift */,
+				730CE2312559495900EDBF73 /* XCTestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -373,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				730D4B1C25566D5400D6F67E /* AccountsPresenterTest.swift */,
+				730CE23525594A0200EDBF73 /* TransactionsPresenterTest.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -381,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				730D4B2025566DAC00D6F67E /* GetAccountsUseCaseSpy.swift */,
+				730CE22D255940FA00EDBF73 /* GetTransactionsUseCaseSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -397,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				730D4B1825566BEA00D6F67E /* AccountsPresenterStub.swift */,
+				730CE23925594A1B00EDBF73 /* TransactionsPresenterStub.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -416,6 +435,7 @@
 			children = (
 				730D4B2425566E2A00D6F67E /* AccountsViewSpy.swift */,
 				730D4B2825566E3500D6F67E /* AccountCellSpy.swift */,
+				730CE24125594B3900EDBF73 /* TransactionsViewSpy.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				730D4B3025567AB900D6F67E /* GetAccountsUseCaseTest.swift */,
+				730CE2292559406600EDBF73 /* GetTransactionsUseCaseTest.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -654,17 +675,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				730CE22E255940FA00EDBF73 /* GetTransactionsUseCaseSpy.swift in Sources */,
 				7346E85D233517BB00AEC31C /* CacheCurrenciesGatewayTest.swift in Sources */,
 				7346E8562335168900AEC31C /* LocalPersistCurrenciesGatewaySpy.swift in Sources */,
 				730D4B3125567AB900D6F67E /* GetAccountsUseCaseTest.swift in Sources */,
+				730CE24225594B3900EDBF73 /* TransactionsViewSpy.swift in Sources */,
 				730D4B2525566E2A00D6F67E /* AccountsViewSpy.swift in Sources */,
 				730D4B2925566E3500D6F67E /* AccountCellSpy.swift in Sources */,
 				7346E85F2335194B00AEC31C /* LocalPersistCurrenciesGatewayTest.swift in Sources */,
+				730CE23E25594A6000EDBF73 /* TransactionsRouterSpy.swift in Sources */,
+				730CE23625594A0200EDBF73 /* TransactionsPresenterTest.swift in Sources */,
+				730CE22A2559406600EDBF73 /* GetTransactionsUseCaseTest.swift in Sources */,
 				7346E858233516A000AEC31C /* ApiCurrenciesGatewaySpy.swift in Sources */,
 				7310E7CD2335CC9400F275DF /* Helpers.swift in Sources */,
 				730D4B1925566BEA00D6F67E /* AccountsPresenterStub.swift in Sources */,
 				738485952335BB6E00D3CA86 /* CurrenciesGatewaySpy.swift in Sources */,
+				730CE2322559495900EDBF73 /* XCTestHelpers.swift in Sources */,
 				730D4B2125566DAC00D6F67E /* GetAccountsUseCaseSpy.swift in Sources */,
+				730CE23A25594A1B00EDBF73 /* TransactionsPresenterStub.swift in Sources */,
 				730D4B1D25566D5400D6F67E /* AccountsPresenterTest.swift in Sources */,
 				730D4B2D25566F5000D6F67E /* AccountsRouterSpy.swift in Sources */,
 			);
